@@ -15,6 +15,7 @@
     <table class="table table-striped text-center align-middle">
         <thead>
         <tr>
+            <th scope="col">index</th>
             <th scope="col">Kg price</th>
             <th scope="col">Name</th>
             <th scope="col">Delivered</th>
@@ -26,51 +27,72 @@
             <th scope="col">Action</th>
         </tr>
         </thead>
-        <tbody>
-        <tr id="Strawberries">
-            <td>2</td>
-            <td>Strawberries</td>
-            <td>5.0</td>
-            <td>10</td>
-            <td>3</td>
-            <td>6</td>
-            <td>2</td>
-            <td>4</td>
+        <tbody id="table_body">
+
+        <tr id="add_line" class="d-none w-25">
+            <td>9999</td>
+            <td><label>
+                <input style="width: 50px" id="kg_price_input" type="text"/>
+            </label></td>
+
+            <td><label>
+                <input style="width: 150px" id="name_input" type="text"/>
+            </label></td>
+
+            <td><label>
+<!--                <input style="width: 50px" id="delivered_input" type="text"/>-->
+            </label></td>
+
+            <td></td>
+
+            <td><label>
+<!--                <input style="width: 50px" id="rest_input" type="text"/>-->
+            </label></td>
+
+            <td></td>
+
+            <td></td>
+            <td></td>
+
             <td>
-                <button class="btn btn-light">
-                    <img  src="src/basket-fill.svg" alt="basket full"/>
-                </button>
-                <button class="btn btn-light">
-                    <img  src="src/pencil-fill.svg" alt="basket full"/>
+                <button id="btn_add" class="btn btn-light" onclick="add_line(this)">
+                    +
                 </button>
             </td>
         </tr>
 
-        <tr id="add_line" class="d-none w-25">
-            <td><label>
-                <input class="w-75" id="kg_price_input" type="text" placeholder="Price per Kg"/>
-            </label></td>
 
+        <tr id="modify_line" class="d-none w-25">
             <td><label>
-                <input class="w-75" id="name_input" type="text" placeholder="Name"/>
+                <input style="width: 50px" id="kg_price_mod" type="text" placeholder="Price per Kg"/>
             </label></td>
 
             <td><label>
-                <input class="w-75" id="delivered_input" type="text" placeholder="Price per Kg"/>
+                <input style="width: 150px" id="name_mod" type="text" placeholder="Name" disabled/>
+            </label></td>
+
+            <td><label>
+                <input style="width: 50px" id="delivered_mod" type="text" placeholder="Price per Kg"/>
             </label></td>
 
             <td></td>
 
-            <td ><label>
-                <input class="w-50" id="rest_input" type="text" placeholder="Rest"/>
+            <td><label>
+                <input style="width: 50px" id="rest_mod" type="text" placeholder="Rest"/>
             </label></td>
 
             <td></td>
 
             <td></td>
-
             <td></td>
+
+            <td>
+                <button id="btn_mod" class="btn btn-light">
+                    <img src="src/pencil.svg" alt="pencil full"/>
+                </button>
+            </td>
         </tr>
+
         </tbody>
     </table>
     <button class="btn btn-primary" onclick="displayAddLine()">+</button>
